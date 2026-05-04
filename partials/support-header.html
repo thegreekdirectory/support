@@ -1,0 +1,126 @@
+<!-- partials/support-header.html -->
+<!-- Copyright (C) The Greek Directory, 2025-present. All rights reserved. -->
+
+<header id="supportHeader">
+    <div class="support-header-inner">
+        <!-- Logo + breadcrumb -->
+        <a href="/" class="support-header-logo" style="touch-action:manipulation;-webkit-tap-highlight-color:transparent;" aria-label="The Greek Directory — Home">
+            <img src="https://static.thegreekdirectory.org/img/logo/blue.svg" alt="The Greek Directory">
+        </a>
+
+        <nav class="support-header-breadcrumb" aria-label="Breadcrumb">
+            <a href="/">Home</a>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Support</span>
+        </nav>
+
+        <!-- Right nav -->
+        <nav class="support-header-nav" id="supportHeaderNav" aria-label="Support navigation">
+            <a href="/" id="supNavHome">Home</a>
+            <a href="/listings" id="supNavListings">Directory</a>
+            <a href="/about" id="supNavAbout">About</a>
+            <a href="/business" class="support-nav-cta" id="supNavBusiness">Business Portal</a>
+        </nav>
+
+        <!-- Hamburger (mobile) -->
+        <button id="supHamburgerBtn" class="hidden items-center justify-center w-9 h-9 rounded-lg text-gray-600 hover:bg-gray-100 transition-colors" aria-label="Open menu" style="touch-action:manipulation;-webkit-tap-highlight-color:transparent;border:none;background:none;cursor:pointer;">
+            <svg id="supHamIcon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/></svg>
+            <svg id="supHamClose" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none;"><path d="M18 6L6 18M6 6l12 12" stroke-linecap="round"/></svg>
+        </button>
+    </div>
+
+    <!-- Mobile dropdown -->
+    <div id="supHamDropdown" style="display:none;border-top:1px solid #e5e7eb;background:#fff;">
+        <div style="max-width:1160px;margin:0 auto;padding:0.75rem 1.5rem;display:flex;flex-direction:column;gap:0.25rem;">
+            <a href="/" style="padding:0.6rem 0.75rem;font-size:0.875rem;color:#374151;text-decoration:none;border-radius:8px;transition:background 0.15s;" onmouseover="this.style.background='#f3f4f6'" onmouseout="this.style.background='transparent'">Home</a>
+            <a href="/listings" style="padding:0.6rem 0.75rem;font-size:0.875rem;color:#374151;text-decoration:none;border-radius:8px;transition:background 0.15s;" onmouseover="this.style.background='#f3f4f6'" onmouseout="this.style.background='transparent'">Directory</a>
+            <a href="/about" style="padding:0.6rem 0.75rem;font-size:0.875rem;color:#374151;text-decoration:none;border-radius:8px;transition:background 0.15s;" onmouseover="this.style.background='#f3f4f6'" onmouseout="this.style.background='transparent'">About</a>
+            <a href="/support" style="padding:0.6rem 0.75rem;font-size:0.875rem;color:#045093;font-weight:600;text-decoration:none;border-radius:8px;transition:background 0.15s;" onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='transparent'">Support</a>
+            <div style="padding-top:0.5rem;border-top:1px solid #f3f4f6;margin-top:0.25rem;">
+                <a href="/business" style="display:block;padding:0.7rem 1rem;font-size:0.875rem;font-weight:700;color:#fff;background:#045093;border-radius:9px;text-decoration:none;text-align:center;transition:background 0.15s;" onmouseover="this.style.background='#033d74'" onmouseout="this.style.background='#045093'">Business Portal</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Fixed header spacer -->
+<div class="support-header-spacer"></div>
+
+<script>
+(function initSupportHeader() {
+    // ── Active link highlighting ──────────────────────────────
+    var path = window.location.pathname.replace(/\.html$/, '');
+    var links = [
+        { el: document.getElementById('supNavHome'),      href: '/' },
+        { el: document.getElementById('supNavListings'),  href: '/listings' },
+        { el: document.getElementById('supNavAbout'),     href: '/about' },
+    ];
+    links.forEach(function(l) {
+        if (!l.el) return;
+        var active = (l.href === '/') ? path === '/' : path === l.href || path.startsWith(l.href + '/');
+        if (active) {
+            l.el.style.backgroundColor = '#045093';
+            l.el.style.color           = '#fff';
+            l.el.style.fontWeight      = '600';
+            l.el.style.borderRadius    = '8px';
+        }
+    });
+
+    // Highlight Support link when on /support
+    if (path === '/support' || path.startsWith('/support/')) {
+        var supLink = document.createElement('a');
+        // already handled by CSS — no extra highlight needed
+    }
+
+    // ── Responsive: hamburger vs full nav ─────────────────────
+    var fullNav    = document.getElementById('supportHeaderNav');
+    var hambBtn    = document.getElementById('supHamburgerBtn');
+    var hambDrop   = document.getElementById('supHamDropdown');
+    var hambIcon   = document.getElementById('supHamIcon');
+    var hambClose  = document.getElementById('supHamClose');
+    var dropOpen   = false;
+
+    function measure() {
+        // Reset
+        fullNav.style.display = 'flex';
+        hambBtn.style.display = 'none';
+
+        var header    = fullNav.closest('.support-header-inner');
+        var logoEl    = header.querySelector('a');
+        var breadEl   = header.querySelector('nav[aria-label="Breadcrumb"]');
+        var available = header.clientWidth
+            - (logoEl ? logoEl.offsetWidth : 0)
+            - (breadEl ? breadEl.offsetWidth : 0)
+            - 48;
+
+        if (fullNav.scrollWidth <= available) {
+            fullNav.style.display = 'flex';
+            hambBtn.style.display = 'none';
+        } else {
+            fullNav.style.display  = 'none';
+            hambBtn.style.display  = 'flex';
+        }
+    }
+
+    function toggleDrop() {
+        dropOpen = !dropOpen;
+        hambDrop.style.display  = dropOpen ? 'block' : 'none';
+        hambIcon.style.display  = dropOpen ? 'none'  : 'block';
+        hambClose.style.display = dropOpen ? 'block' : 'none';
+    }
+
+    hambBtn.addEventListener('click', toggleDrop);
+
+    document.addEventListener('click', function(e) {
+        if (dropOpen && !hambBtn.contains(e.target) && !hambDrop.contains(e.target)) {
+            dropOpen = false;
+            hambDrop.style.display  = 'none';
+            hambIcon.style.display  = 'block';
+            hambClose.style.display = 'none';
+        }
+    });
+
+    measure();
+    window.addEventListener('resize', measure);
+})();
+</script>
