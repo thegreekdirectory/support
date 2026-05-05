@@ -1,0 +1,61 @@
+title: "The Greek Directory — Support Center"
+description: "Help articles and guides for The Greek Directory"
+url: "https://support.thegreekdirectory.org"
+baseurl: ""
+
+author:
+  name: "The Greek Directory"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  hard_wrap: false
+
+# Sass
+sass:
+  style: compressed
+
+# Plugins (all GitHub Pages whitelisted)
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+
+# Collections
+collections:
+  articles:
+    output: true
+    permalink: /support/:name/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "articles"
+    values:
+      layout: article
+  - scope:
+      path: ""
+    values:
+      layout: default
+
+# Exclude from build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - node_modules
+  - vendor
+
+# SEO tag defaults
+twitter:
+  username: greekdirectory
+logo: https://static.thegreekdirectory.org/img/logo/blue.svg
+social:
+  name: The Greek Directory
+  links:
+    - https://www.facebook.com/thegreekdirectory
+    - https://www.instagram.com/thegreekdirectory
