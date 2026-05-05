@@ -29,7 +29,7 @@ TGD serves two main groups:
 
 **Business Owners** — Greek-owned business owners who want to be found by their community. Owners can claim their listing, manage their profile, upload photos, set hours, and track how customers engage with their page.
 
-## How the Directory works
+## How the directory works
 
 <ol class="art-steps">
   <li class="art-step">
