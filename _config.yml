@@ -28,7 +28,7 @@ plugins:
 collections:
   articles:
     output: true
-    permalink: /support/:name/
+    permalink: /article/users/:name/
 
 # Defaults
 defaults:
