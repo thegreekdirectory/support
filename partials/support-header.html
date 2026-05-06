@@ -17,9 +17,9 @@
         <!-- Right nav -->
         <nav class="support-header-nav" id="supportHeaderNav" aria-label="Support navigation">
             <a href="/" id="supNavHome">Home</a>
-            <a href="/listings" id="supNavListings">Directory</a>
+            <a href="https://thegreekdirectory.org" id="supNavListings">Directory</a>
             <a href="/about" id="supNavAbout">About</a>
-            <a href="/business" class="support-nav-cta" id="supNavBusiness">Business Portal</a>
+            <a href="https://thegreekdirectory.org/business" class="support-nav-cta" id="supNavBusiness">Business Portal</a>
         </nav>
 
         <!-- Hamburger (mobile) -->
@@ -33,11 +33,11 @@
     <div id="supHamDropdown" style="display:none;border-top:1px solid #e5e7eb;background:#fff;">
         <div style="max-width:1160px;margin:0 auto;padding:0.75rem 1.5rem;display:flex;flex-direction:column;gap:0.25rem;">
             <a href="/" style="padding:0.6rem 0.75rem;font-size:0.875rem;color:#374151;text-decoration:none;border-radius:8px;transition:background 0.15s;" onmouseover="this.style.background='#f3f4f6'" onmouseout="this.style.background='transparent'">Home</a>
-            <a href="/listings" style="padding:0.6rem 0.75rem;font-size:0.875rem;color:#374151;text-decoration:none;border-radius:8px;transition:background 0.15s;" onmouseover="this.style.background='#f3f4f6'" onmouseout="this.style.background='transparent'">Directory</a>
-            <a href="/about" style="padding:0.6rem 0.75rem;font-size:0.875rem;color:#374151;text-decoration:none;border-radius:8px;transition:background 0.15s;" onmouseover="this.style.background='#f3f4f6'" onmouseout="this.style.background='transparent'">About</a>
-            <a href="/support" style="padding:0.6rem 0.75rem;font-size:0.875rem;color:#045093;font-weight:600;text-decoration:none;border-radius:8px;transition:background 0.15s;" onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='transparent'">Support</a>
+            <a href="https://thegreekdirectory.org" style="padding:0.6rem 0.75rem;font-size:0.875rem;color:#374151;text-decoration:none;border-radius:8px;transition:background 0.15s;" onmouseover="this.style.background='#f3f4f6'" onmouseout="this.style.background='transparent'">Directory</a>
+            <a href="https://thegreekdirectory.org/about" style="padding:0.6rem 0.75rem;font-size:0.875rem;color:#374151;text-decoration:none;border-radius:8px;transition:background 0.15s;" onmouseover="this.style.background='#f3f4f6'" onmouseout="this.style.background='transparent'">About</a>
+            <a href="https://support.thegreekdirectory.org" style="padding:0.6rem 0.75rem;font-size:0.875rem;color:#045093;font-weight:600;text-decoration:none;border-radius:8px;transition:background 0.15s;" onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='transparent'">Support</a>
             <div style="padding-top:0.5rem;border-top:1px solid #f3f4f6;margin-top:0.25rem;">
-                <a href="/business" style="display:block;padding:0.7rem 1rem;font-size:0.875rem;font-weight:700;color:#fff;background:#045093;border-radius:9px;text-decoration:none;text-align:center;transition:background 0.15s;" onmouseover="this.style.background='#033d74'" onmouseout="this.style.background='#045093'">Business Portal</a>
+                <a href="https://thegreekdirectory.org/business" style="display:block;padding:0.7rem 1rem;font-size:0.875rem;font-weight:700;color:#fff;background:#045093;border-radius:9px;text-decoration:none;text-align:center;transition:background 0.15s;" onmouseover="this.style.background='#033d74'" onmouseout="this.style.background='#045093'">Business Portal</a>
             </div>
         </div>
     </div>
@@ -52,8 +52,8 @@
     var path = window.location.pathname.replace(/\.html$/, '');
     var links = [
         { el: document.getElementById('supNavHome'),      href: '/' },
-        { el: document.getElementById('supNavListings'),  href: '/listings' },
-        { el: document.getElementById('supNavAbout'),     href: '/about' },
+        { el: document.getElementById('supNavListings'),  href: 'https://thegreekdirectory.org' },
+        { el: document.getElementById('supNavAbout'),     href: 'https://thegreekdirectory.org/about' },
     ];
     links.forEach(function(l) {
         if (!l.el) return;
