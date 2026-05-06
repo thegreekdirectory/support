@@ -1,36 +1,126 @@
-<!-- partials/support-footer.html -->
+<!-- partials/support-header.html -->
 <!-- Copyright (C) The Greek Directory, 2025-present. All rights reserved. -->
 
-<footer id="supportFooter">
-    <div class="support-footer-inner">
-        <div class="support-footer-top">
-            <div class="support-footer-brand">
-                <img src="https://static.thegreekdirectory.org/img/logo/white.svg" alt="The Greek Directory">
-                <p>Support Center — Helping the Greek-American business community.</p>
-            </div>
+<header id="supportHeader">
+    <div class="support-header-inner">
+        <!-- Logo + breadcrumb -->
+        <a href="/" class="support-header-logo" style="touch-action:manipulation;-webkit-tap-highlight-color:transparent;" aria-label="The Greek Directory — Home">
+            <img src="https://static.thegreekdirectory.org/img/logo/blue.svg" alt="The Greek Directory">
+        </a>
 
-            <nav class="support-footer-links" aria-label="Footer navigation">
-                <a href="/">Directory</a>
-                <a href="/listings">Listings</a>
-                <a href="/about">About</a>
-                <a href="/support">Support</a>
-                <a href="/business">Business Portal</a>
-                <a href="/submit-listing">Add Business</a>
-                <a href="mailto:contact@thegreekdirectory.org">Contact</a>
-            </nav>
-        </div>
+        <nav class="support-header-breadcrumb" aria-label="Breadcrumb">
+            <a href="/">Home</a>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Support</span>
+        </nav>
 
-        <div class="support-footer-bottom">
-            <p>&copy; 2025 The Greek Directory. All rights reserved.</p>
-            <div style="display:flex;gap:0.25rem;flex-wrap:wrap;">
-                <a href="/privacy">Privacy Policy</a>
-                <span style="color:rgba(255,255,255,0.2);">·</span>
-                <a href="/terms">Terms of Service</a>
-                <span style="color:rgba(255,255,255,0.2);">·</span>
-                <a href="/legal">Legal</a>
+        <!-- Right nav -->
+        <nav class="support-header-nav" id="supportHeaderNav" aria-label="Support navigation">
+            <a href="/" id="supNavHome">Home</a>
+            <a href="https://thegreekdirectory.org" id="supNavListings">Directory</a>
+            <a href="https://thegreekdirectory.org/about" id="supNavAbout">About</a>
+            <a href="https://thegreekdirectory.org/business" class="support-nav-cta" id="supNavBusiness">Business Portal</a>
+        </nav>
+
+        <!-- Hamburger (mobile) -->
+        <button id="supHamburgerBtn" class="hidden items-center justify-center w-9 h-9 rounded-lg text-gray-600 hover:bg-gray-100 transition-colors" aria-label="Open menu" style="touch-action:manipulation;-webkit-tap-highlight-color:transparent;border:none;background:none;cursor:pointer;">
+            <svg id="supHamIcon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/></svg>
+            <svg id="supHamClose" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none;"><path d="M18 6L6 18M6 6l12 12" stroke-linecap="round"/></svg>
+        </button>
+    </div>
+
+    <!-- Mobile dropdown -->
+    <div id="supHamDropdown" style="display:none;border-top:1px solid #e5e7eb;background:#fff;">
+        <div style="max-width:1160px;margin:0 auto;padding:0.75rem 1.5rem;display:flex;flex-direction:column;gap:0.25rem;">
+            <a href="/" style="padding:0.6rem 0.75rem;font-size:0.875rem;color:#374151;text-decoration:none;border-radius:8px;transition:background 0.15s;" onmouseover="this.style.background='#f3f4f6'" onmouseout="this.style.background='transparent'">Home</a>
+            <a href="https://thegreekdirectory.org" style="padding:0.6rem 0.75rem;font-size:0.875rem;color:#374151;text-decoration:none;border-radius:8px;transition:background 0.15s;" onmouseover="this.style.background='#f3f4f6'" onmouseout="this.style.background='transparent'">Directory</a>
+            <a href="https://thegreekdirectory.org/about" style="padding:0.6rem 0.75rem;font-size:0.875rem;color:#374151;text-decoration:none;border-radius:8px;transition:background 0.15s;" onmouseover="this.style.background='#f3f4f6'" onmouseout="this.style.background='transparent'">About</a>
+            <a href="https://support.thegreekdirectory.org" style="padding:0.6rem 0.75rem;font-size:0.875rem;color:#045093;font-weight:600;text-decoration:none;border-radius:8px;transition:background 0.15s;" onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='transparent'">Support</a>
+            <div style="padding-top:0.5rem;border-top:1px solid #f3f4f6;margin-top:0.25rem;">
+                <a href="https://thegreekdirectory.org/business" style="display:block;padding:0.7rem 1rem;font-size:0.875rem;font-weight:700;color:#fff;background:#045093;border-radius:9px;text-decoration:none;text-align:center;transition:background 0.15s;" onmouseover="this.style.background='#033d74'" onmouseout="this.style.background='#045093'">Business Portal</a>
             </div>
         </div>
     </div>
-</footer>
+</header>
 
-<!-- Copyright (C) The Greek Directory, 2025-present. All rights reserved. -->
+<!-- Fixed header spacer -->
+<div class="support-header-spacer"></div>
+
+<script>
+(function initSupportHeader() {
+    // ── Active link highlighting ──────────────────────────────
+    var path = window.location.pathname.replace(/\.html$/, '');
+    var links = [
+        { el: document.getElementById('supNavHome'),      href: '/' },
+        { el: document.getElementById('supNavListings'),  href: 'https://thegreekdirectory.org' },
+        { el: document.getElementById('supNavAbout'),     href: 'https://thegreekdirectory.org/about' },
+    ];
+    links.forEach(function(l) {
+        if (!l.el) return;
+        var active = (l.href === '/') ? path === '/' : path === l.href || path.startsWith(l.href + '/');
+        if (active) {
+            l.el.style.backgroundColor = '#045093';
+            l.el.style.color           = '#fff';
+            l.el.style.fontWeight      = '600';
+            l.el.style.borderRadius    = '8px';
+        }
+    });
+
+    // Highlight Support link when on /support
+    if (path === '/support' || path.startsWith('/support/')) {
+        var supLink = document.createElement('a');
+        // already handled by CSS — no extra highlight needed
+    }
+
+    // ── Responsive: hamburger vs full nav ─────────────────────
+    var fullNav    = document.getElementById('supportHeaderNav');
+    var hambBtn    = document.getElementById('supHamburgerBtn');
+    var hambDrop   = document.getElementById('supHamDropdown');
+    var hambIcon   = document.getElementById('supHamIcon');
+    var hambClose  = document.getElementById('supHamClose');
+    var dropOpen   = false;
+
+    function measure() {
+        // Reset
+        fullNav.style.display = 'flex';
+        hambBtn.style.display = 'none';
+
+        var header    = fullNav.closest('.support-header-inner');
+        var logoEl    = header.querySelector('a');
+        var breadEl   = header.querySelector('nav[aria-label="Breadcrumb"]');
+        var available = header.clientWidth
+            - (logoEl ? logoEl.offsetWidth : 0)
+            - (breadEl ? breadEl.offsetWidth : 0)
+            - 48;
+
+        if (fullNav.scrollWidth <= available) {
+            fullNav.style.display = 'flex';
+            hambBtn.style.display = 'none';
+        } else {
+            fullNav.style.display  = 'none';
+            hambBtn.style.display  = 'flex';
+        }
+    }
+
+    function toggleDrop() {
+        dropOpen = !dropOpen;
+        hambDrop.style.display  = dropOpen ? 'block' : 'none';
+        hambIcon.style.display  = dropOpen ? 'none'  : 'block';
+        hambClose.style.display = dropOpen ? 'block' : 'none';
+    }
+
+    hambBtn.addEventListener('click', toggleDrop);
+
+    document.addEventListener('click', function(e) {
+        if (dropOpen && !hambBtn.contains(e.target) && !hambDrop.contains(e.target)) {
+            dropOpen = false;
+            hambDrop.style.display  = 'none';
+            hambIcon.style.display  = 'block';
+            hambClose.style.display = 'none';
+        }
+    });
+
+    measure();
+    window.addEventListener('resize', measure);
+})();
+</script>
