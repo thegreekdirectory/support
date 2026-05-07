@@ -1,6 +1,6 @@
 ---
 layout: article
-title: "Welcome to The Greek Directory"
+title: "Welcome to The Greek Directory!"
 description: "Learn what The Greek Directory is, who it's for, and how to get the most out of the platform as a visitor or business owner."
 category: getting-started
 category_name: "Getting Started"
