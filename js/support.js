@@ -2,412 +2,90 @@
 // Copyright (C) The Greek Directory, 2025-present. All rights reserved.
 
 /* ═══════════════════════════════════════
-   SUPPORT ARTICLES DATA
+   CATEGORIES — matches articles.json category IDs
 ═══════════════════════════════════════ */
 
 const SUPPORT_CATEGORIES = [
     {
-        id: 'getting-started',
-        name: 'Getting Started',
-        icon: '🚀',
-        description: 'New to TGD? Start here.',
+        id: 'search-discovery',
+        name: 'Search & Discovery',
+        icon: '🔍',
+        description: 'Find businesses by name, category, or location.',
         color: '#2563eb',
         bg: '#eff6ff',
         fg: '#1d4ed8',
     },
     {
-        id: 'business-owners',
-        name: 'Business Owners',
-        icon: '🏢',
-        description: 'Claim and manage your listing.',
-        color: '#d97706',
-        bg: '#fef3c7',
-        fg: '#92400e',
-    },
-    {
-        id: 'managing-listing',
-        name: 'Managing Your Listing',
-        icon: '📋',
-        description: 'Edit, update, and optimize.',
+        id: 'filters-sorting',
+        name: 'Filters & Sorting',
+        icon: '🗂️',
+        description: 'Narrow results by category, location, hours, and more.',
         color: '#059669',
         bg: '#d1fae5',
         fg: '#065f46',
     },
     {
-        id: 'plans-billing',
-        name: 'Plans & Tiers',
+        id: 'business-listings',
+        name: 'Business Listings',
+        icon: '🏢',
+        description: 'Reading and understanding listing pages.',
+        color: '#d97706',
+        bg: '#fef3c7',
+        fg: '#92400e',
+    },
+    {
+        id: 'maps-directions',
+        name: 'Maps & Directions',
+        icon: '🗺️',
+        description: 'Explore businesses on the interactive map.',
+        color: '#0891b2',
+        bg: '#e0f2fe',
+        fg: '#0e7490',
+    },
+    {
+        id: 'starring-favorites',
+        name: 'Starring & Favorites',
         icon: '⭐',
-        description: 'FREE, VERIFIED, FEATURED, PREMIUM.',
+        description: 'Save and manage your favorite businesses.',
+        color: '#ca8a04',
+        bg: '#fef9c3',
+        fg: '#854d0e',
+    },
+    {
+        id: 'pwa-app',
+        name: 'The PWA App',
+        icon: '📱',
+        description: 'Install and use the Greek Directory app.',
         color: '#7c3aed',
         bg: '#ede9fe',
         fg: '#6b21a8',
     },
     {
-        id: 'technical',
-        name: 'Technical Help',
-        icon: '🔧',
-        description: 'Troubleshooting common issues.',
+        id: 'language-accessibility',
+        name: 'Language & Accessibility',
+        icon: '🌐',
+        description: 'Switch between English and Greek.',
+        color: '#0f766e',
+        bg: '#ccfbf1',
+        fg: '#134e4a',
+    },
+    {
+        id: 'submitting-business',
+        name: 'Submitting a Business',
+        icon: '📋',
+        description: 'Add a Greek-owned business to the directory.',
         color: '#dc2626',
         bg: '#fee2e2',
         fg: '#991b1b',
     },
     {
-        id: 'account',
-        name: 'Account & Contact',
-        icon: '👤',
-        description: 'Account settings and support.',
-        color: '#0891b2',
-        bg: '#e0f2fe',
-        fg: '#0e7490',
-    },
-];
-
-// Copyright (C) The Greek Directory, 2025-present. All rights reserved.
-
-const SUPPORT_ARTICLES = [
-    // ── Getting Started ─────────────────────────────────────────
-    {
-        id: 'gs-01',
-        category: 'getting-started',
-        title: 'Welcome to The Greek Directory',
-        excerpt: 'Learn what The Greek Directory is, who it\'s for, and how to get the most out of the platform as a visitor or business owner.',
-        slug: 'support/welcome-to-tgd',
-        readTime: '3 min read',
-        popular: true,
-    },
-    {
-        id: 'gs-02',
-        category: 'getting-started',
-        title: 'How to search for a business',
-        excerpt: 'Use the search bar, filters, and category browser to find exactly the Greek-owned business you\'re looking for, anywhere in the US.',
-        slug: 'support/how-to-search',
-        readTime: '2 min read',
-        popular: true,
-    },
-    {
-        id: 'gs-03',
-        category: 'getting-started',
-        title: 'Using the map view',
-        excerpt: 'The map view lets you visually explore businesses near you. Learn how to use the interactive map, clusters, and location filters.',
-        slug: 'support/using-map-view',
-        readTime: '3 min read',
-        popular: false,
-    },
-    {
-        id: 'gs-04',
-        category: 'getting-started',
-        title: 'Understanding listing tiers',
-        excerpt: 'Listings on TGD come in four tiers: FREE, VERIFIED, FEATURED, and PREMIUM. Each tier unlocks additional features and visibility.',
-        slug: 'support/listing-tiers',
-        readTime: '4 min read',
-        popular: false,
-    },
-    {
-        id: 'gs-05',
-        category: 'getting-started',
-        title: 'Using search filters and sorting',
-        excerpt: 'Narrow down listings by category, subcategory, location, hours, pricing, and more with our advanced filter panel.',
-        slug: 'support/search-filters',
-        readTime: '3 min read',
-        popular: false,
-    },
-    {
-        id: 'gs-06',
-        category: 'getting-started',
-        title: 'Starring and saving your favorite businesses',
-        excerpt: 'Tap the star icon on any listing to save it. Access your saved businesses any time from the Starred tab in the menu.',
-        slug: 'support/starring-favorites',
-        readTime: '2 min read',
-        popular: false,
-    },
-    {
-        id: 'gs-07',
-        category: 'getting-started',
-        title: 'Installing The Greek Directory as an app (PWA)',
-        excerpt: 'Install TGD on your iPhone or Android home screen for a native app experience with offline support and a bottom navigation dock.',
-        slug: 'support/install-pwa',
-        readTime: '4 min read',
-        popular: false,
-    },
-
-    // ── Business Owners ─────────────────────────────────────────
-    {
-        id: 'bo-01',
-        category: 'business-owners',
-        title: 'How to claim your business listing',
-        excerpt: 'If your business is already in the directory, you can claim it by verifying your identity with the confirmation key provided by our team.',
-        slug: 'support/claim-listing',
-        readTime: '4 min read',
-        popular: true,
-    },
-    {
-        id: 'bo-02',
-        category: 'business-owners',
-        title: 'Creating a business owner account',
-        excerpt: 'Step-by-step guide to signing up as a business owner: find your listing, enter your confirmation key, and set up your account.',
-        slug: 'support/create-account',
-        readTime: '3 min read',
-        popular: true,
-    },
-    {
-        id: 'bo-03',
-        category: 'business-owners',
-        title: 'What is the confirmation key?',
-        excerpt: 'The confirmation key is a unique 3-word code assigned to your listing by our team. It is used to verify ownership when you sign up.',
-        slug: 'support/confirmation-key',
-        readTime: '2 min read',
-        popular: false,
-    },
-    {
-        id: 'bo-04',
-        category: 'business-owners',
-        title: 'Logging in to the business portal',
-        excerpt: 'Access the Business Portal at thegreekdirectory.org/business using your email and password. Learn how sessions work and what to do if you\'re locked out.',
-        slug: 'support/business-portal-login',
-        readTime: '2 min read',
-        popular: false,
-    },
-    {
-        id: 'bo-05',
-        category: 'business-owners',
-        title: 'Submitting a new listing for review',
-        excerpt: 'Don\'t see your business on TGD? Submit it for review using our public submission form. Our team reviews all submissions before publishing.',
-        slug: 'support/submit-listing',
-        readTime: '3 min read',
-        popular: false,
-    },
-    {
-        id: 'bo-06',
-        category: 'business-owners',
-        title: 'How to reset your password',
-        excerpt: 'Forgot your business portal password? Use the "Forgot password" link on the sign-in page to receive a reset email.',
-        slug: 'support/reset-password',
-        readTime: '2 min read',
-        popular: true,
-    },
-
-    // ── Managing Listing ─────────────────────────────────────────
-    {
-        id: 'ml-01',
-        category: 'managing-listing',
-        title: 'Editing your business information',
-        excerpt: 'Update your business name, address, phone number, website, tagline, and description from the Edit tab in your business portal dashboard.',
-        slug: 'support/editing-business-info',
-        readTime: '3 min read',
-        popular: true,
-    },
-    {
-        id: 'ml-02',
-        category: 'managing-listing',
-        title: 'Uploading photos and your logo',
-        excerpt: 'Learn how to upload a logo and photos to your listing. Tips on image sizes, formats, and how many photos each tier supports.',
-        slug: 'support/uploading-photos',
-        readTime: '3 min read',
-        popular: true,
-    },
-    {
-        id: 'ml-03',
-        category: 'managing-listing',
-        title: 'Setting your business hours',
-        excerpt: 'Add your hours of operation for each day of the week. You can mark individual days as Closed or set 24 Hours for always-open businesses.',
-        slug: 'support/business-hours',
-        readTime: '3 min read',
-        popular: true,
-    },
-    {
-        id: 'ml-04',
-        category: 'managing-listing',
-        title: 'Adding social media links',
-        excerpt: 'Link your Facebook, Instagram, YouTube, TikTok, LinkedIn, Twitter, and up to 3 custom social profiles from the Edit tab.',
-        slug: 'support/social-media-links',
-        readTime: '2 min read',
-        popular: false,
-    },
-    {
-        id: 'ml-05',
-        category: 'managing-listing',
-        title: 'Adding custom call-to-action buttons',
-        excerpt: 'FEATURED and PREMIUM listings can add custom CTA buttons (e.g., "Book a Table", "Order Online") that appear prominently on your listing page.',
-        slug: 'support/custom-cta-buttons',
-        readTime: '3 min read',
-        popular: false,
-    },
-    {
-        id: 'ml-06',
-        category: 'managing-listing',
-        title: 'Selecting categories and subcategories',
-        excerpt: 'Choose the best category and subcategories for your business to make it easier for customers to find you in the directory.',
-        slug: 'support/categories-subcategories',
-        readTime: '2 min read',
-        popular: false,
-    },
-    {
-        id: 'ml-07',
-        category: 'managing-listing',
-        title: 'Adding review site links',
-        excerpt: 'Link your Google, Yelp, and TripAdvisor review pages to your listing. Once set by an admin, review links can only be changed by contacting support.',
-        slug: 'support/review-links',
-        readTime: '2 min read',
-        popular: false,
-    },
-    {
-        id: 'ml-08',
-        category: 'managing-listing',
-        title: 'Viewing your listing analytics',
-        excerpt: 'Track views, call clicks, website visits, direction requests, and share events from the Analytics tab in your business portal.',
-        slug: 'support/listing-analytics',
-        readTime: '3 min read',
-        popular: false,
-    },
-    {
-        id: 'ml-09',
-        category: 'managing-listing',
-        title: 'Adding additional info and details',
-        excerpt: 'Use the Additional Info section to add up to 5 custom label/value pairs — like Cuisine Type, Parking, Accessibility features, and more.',
-        slug: 'support/additional-info',
-        readTime: '2 min read',
-        popular: false,
-    },
-
-    // ── Plans & Tiers ─────────────────────────────────────────
-    {
-        id: 'pb-01',
-        category: 'plans-billing',
-        title: 'Understanding the four listing tiers',
-        excerpt: 'Compare FREE, VERIFIED, FEATURED, and PREMIUM tiers side-by-side: photos, videos, analytics, badges, and priority placement.',
-        slug: 'support/tier-comparison',
-        readTime: '4 min read',
-        popular: false,
-    },
-    {
-        id: 'pb-02',
-        category: 'plans-billing',
-        title: 'What does "Verified" mean?',
-        excerpt: 'A Verified badge signals to visitors that this listing has been reviewed and confirmed by The Greek Directory team.',
-        slug: 'support/what-is-verified',
-        readTime: '2 min read',
-        popular: false,
-    },
-    {
-        id: 'pb-03',
-        category: 'plans-billing',
-        title: 'What does "Featured" mean?',
-        excerpt: 'Featured listings appear at the top of search results and on the homepage. Learn how to get your business featured.',
-        slug: 'support/what-is-featured',
-        readTime: '2 min read',
-        popular: false,
-    },
-    {
-        id: 'pb-04',
-        category: 'plans-billing',
-        title: 'How to upgrade your listing tier',
-        excerpt: 'Interested in upgrading from FREE to VERIFIED, FEATURED, or PREMIUM? Contact us to learn about availability and options.',
-        slug: 'support/upgrade-tier',
-        readTime: '2 min read',
-        popular: false,
-    },
-
-    // ── Technical ─────────────────────────────────────────
-    {
-        id: 'tech-01',
-        category: 'technical',
-        title: 'Images aren\'t uploading — what to do',
-        excerpt: 'If your photo or logo upload fails, check your file size (max 10MB), file format (JPG, PNG, WEBP), and internet connection.',
-        slug: 'support/image-upload-issues',
-        readTime: '3 min read',
-        popular: false,
-    },
-    {
-        id: 'tech-02',
-        category: 'technical',
-        title: 'I can\'t log in to my account',
-        excerpt: 'Troubleshoot login issues: wrong email, forgotten password, account not yet created, or browser cache problems.',
-        slug: 'support/cant-login',
-        readTime: '3 min read',
-        popular: true,
-    },
-    {
-        id: 'tech-03',
-        category: 'technical',
-        title: 'The map isn\'t showing my business location',
-        excerpt: 'Your listing needs a valid street address to appear on the map. Learn how to update your address and trigger re-geocoding.',
-        slug: 'support/map-location-missing',
-        readTime: '3 min read',
-        popular: false,
-    },
-    {
-        id: 'tech-04',
-        category: 'technical',
-        title: 'My listing changes aren\'t showing up',
-        excerpt: 'Changes made in the business portal are typically reflected within a few minutes. Learn what to do if updates aren\'t appearing.',
-        slug: 'support/changes-not-showing',
-        readTime: '3 min read',
-        popular: false,
-    },
-    {
-        id: 'tech-05',
-        category: 'technical',
-        title: 'The site isn\'t loading or displaying correctly',
-        excerpt: 'Steps to fix display issues: clear your browser cache, disable extensions, or try a different browser.',
-        slug: 'support/site-loading-issues',
-        readTime: '2 min read',
-        popular: false,
-    },
-    {
-        id: 'tech-06',
-        category: 'technical',
-        title: 'PWA app not updating after install',
-        excerpt: 'If your installed PWA is showing outdated content, try clearing the app cache from the Settings tab or reinstalling the app.',
-        slug: 'support/pwa-update-issues',
-        readTime: '2 min read',
-        popular: false,
-    },
-
-    // ── Account ─────────────────────────────────────────
-    {
-        id: 'ac-01',
-        category: 'account',
-        title: 'How to contact support',
-        excerpt: 'Reach our team by email at contact@thegreekdirectory.org. We typically respond within 1-2 business days.',
-        slug: 'support/contact-support',
-        readTime: '1 min read',
-        popular: false,
-    },
-    {
-        id: 'ac-02',
-        category: 'account',
-        title: 'Reporting an incorrect or duplicate listing',
-        excerpt: 'Found a listing with wrong information, or a duplicate entry? Use the "Suggest an Edit" button on the listing page or contact us directly.',
-        slug: 'support/report-listing',
-        readTime: '2 min read',
-        popular: false,
-    },
-    {
-        id: 'ac-03',
-        category: 'account',
-        title: 'Changing your owner contact information',
-        excerpt: 'Update your visible contact details (name, title, phone, email) from the Settings tab in the business portal.',
-        slug: 'support/change-contact-info',
-        readTime: '2 min read',
-        popular: false,
-    },
-    {
-        id: 'ac-04',
-        category: 'account',
-        title: 'Privacy: controlling what\'s visible on your listing',
-        excerpt: 'Toggle visibility for your owner name, email, and phone number. Visitors will only see the information you choose to display.',
-        slug: 'support/privacy-visibility',
-        readTime: '2 min read',
-        popular: false,
-    },
-    {
-        id: 'ac-05',
-        category: 'account',
-        title: 'Requesting listing removal',
-        excerpt: 'If you\'d like your business removed from the directory, contact us with your business name and the email address on file.',
-        slug: 'support/request-removal',
-        readTime: '2 min read',
-        popular: false,
+        id: 'troubleshooting',
+        name: 'General & Troubleshooting',
+        icon: '⚙️',
+        description: 'Fix issues and understand privacy & data.',
+        color: '#6b7280',
+        bg: '#f3f4f6',
+        fg: '#374151',
     },
 ];
 
@@ -417,27 +95,45 @@ const SUPPORT_ARTICLES = [
    STATE
 ═══════════════════════════════════════ */
 
-let currentCategory = 'all';
-let currentSearch   = '';
-let searchTimer     = null;
+let SUPPORT_ARTICLES = [];   // populated by loadArticles()
+let currentCategory  = 'all';
+let currentSearch    = '';
+let searchTimer      = null;
 
 /* ═══════════════════════════════════════
    INIT
 ═══════════════════════════════════════ */
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
+    await loadArticles();
+
     renderCategories();
     renderFilterBar();
     renderArticles('all');
     setupSearch();
 
-    // Check URL hash for direct category linking: support#business-owners
+    // Check URL hash for direct category linking: /#search-discovery
     const hash = location.hash.replace('#', '');
     if (hash && SUPPORT_CATEGORIES.find(c => c.id === hash)) {
         filterByCategory(hash);
         document.getElementById('articlesSection')?.scrollIntoView({ behavior: 'smooth' });
     }
 });
+
+/* ═══════════════════════════════════════
+   LOAD ARTICLES FROM JSON
+═══════════════════════════════════════ */
+
+async function loadArticles() {
+    try {
+        const res = await fetch('/assets/data/articles.json');
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        SUPPORT_ARTICLES = await res.json();
+    } catch (err) {
+        console.error('Failed to load articles.json:', err);
+        SUPPORT_ARTICLES = [];
+    }
+}
 
 // Copyright (C) The Greek Directory, 2025-present. All rights reserved.
 
@@ -500,29 +196,23 @@ function filterByCategory(catId, clickedEl) {
     currentCategory = catId;
     currentSearch   = '';
 
-    // Clear search input
     const input = document.getElementById('supportSearchInput');
     if (input) input.value = '';
     hideSearchDropdown();
 
-    // Toggle active state on category cards
     document.querySelectorAll('.support-cat-card').forEach(card => {
         card.classList.toggle('active', card.dataset.cat === catId);
     });
 
-    // Toggle active state on filter bar buttons
     document.querySelectorAll('.support-filter-btn').forEach(btn => {
         btn.classList.toggle('active', btn.dataset.cat === catId);
     });
 
-    // Show articles section, hide search results
     showArticlesSection();
     renderArticles(catId);
 
-    // Scroll to articles section smoothly
     document.getElementById('articlesSection')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
-    // Update URL hash for linkability
     if (catId !== 'all') {
         history.replaceState(null, '', `#${catId}`);
     } else {
@@ -556,25 +246,34 @@ function renderArticles(catId) {
 }
 
 function renderArticleCard(article) {
-    const cat  = SUPPORT_CATEGORIES.find(c => c.id === article.category) || {};
+    const cat       = SUPPORT_CATEGORIES.find(c => c.id === article.category) || {};
+    // JSON uses category_name / category_icon on each article — fall back to category lookup
+    const badgeIcon = article.category_icon || cat.icon || '';
+    const badgeName = article.category_name || cat.name || '';
+    const catBg     = cat.bg  || '#eff6ff';
+    const catFg     = cat.fg  || '#1d4ed8';
+    // JSON uses description; fall back to excerpt for forward-compat
+    const excerpt   = article.description || article.excerpt || '';
+    // JSON uses read_time; fall back to readTime
+    const readTime  = article.read_time   || article.readTime || '';
 
     return `
         <article
             class="support-article-card"
-            style="--cat-bg:${cat.bg || '#eff6ff'};--cat-fg:${cat.fg || '#1d4ed8'};"
-            onclick="openArticle('${article.slug}')"
+            style="--cat-bg:${catBg};--cat-fg:${catFg};"
+            onclick="openArticle('${escHtml(article.slug)}')"
             role="button"
             tabindex="0"
             aria-label="Read: ${escHtml(article.title)}"
-            onkeydown="if(event.key==='Enter'||event.key===' ')openArticle('${article.slug}')"
+            onkeydown="if(event.key==='Enter'||event.key===' ')openArticle('${escHtml(article.slug)}')"
         >
             <span class="support-article-cat-badge">
-                ${cat.icon || ''} ${escHtml(cat.name || '')}
+                ${badgeIcon} ${escHtml(badgeName)}
             </span>
             <h3 class="support-article-title">${escHtml(article.title)}</h3>
-            <p class="support-article-excerpt">${escHtml(article.excerpt)}</p>
+            <p class="support-article-excerpt">${escHtml(excerpt)}</p>
             <div class="support-article-footer">
-                <span class="support-article-read">${article.readTime}</span>
+                <span class="support-article-read">${escHtml(readTime)}</span>
                 <span class="support-article-arrow" aria-hidden="true">
                     <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                         <path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/>
@@ -598,12 +297,8 @@ function setupSearch() {
     input.addEventListener('input', () => {
         const val = input.value.trim();
         clearBtn?.classList.toggle('hidden', val.length === 0);
-
         clearTimeout(searchTimer);
-        if (val.length < 2) {
-            hideSearchDropdown();
-            return;
-        }
+        if (val.length < 2) { hideSearchDropdown(); return; }
         searchTimer = setTimeout(() => showSearchDropdown(val), 160);
     });
 
@@ -623,6 +318,15 @@ function setupSearch() {
     });
 }
 
+function searchArticles(query) {
+    const q = query.toLowerCase();
+    return SUPPORT_ARTICLES.filter(a => {
+        const desc    = (a.description || a.excerpt || '').toLowerCase();
+        const catName = (a.category_name || SUPPORT_CATEGORIES.find(c => c.id === a.category)?.name || '').toLowerCase();
+        return a.title.toLowerCase().includes(q) || desc.includes(q) || catName.includes(q);
+    });
+}
+
 function showSearchDropdown(query) {
     const dropdown = document.getElementById('supportSearchDropdown');
     if (!dropdown) return;
@@ -639,7 +343,7 @@ function showSearchDropdown(query) {
     html += results.map(a => {
         const cat = SUPPORT_CATEGORIES.find(c => c.id === a.category) || {};
         return `
-            <button class="support-drop-item" onclick="openArticle('${a.slug}')">
+            <button class="support-drop-item" onclick="openArticle('${escHtml(a.slug)}')">
                 <span class="support-drop-cat-dot" style="background:${cat.color || '#6b7280'};"></span>
                 <span>${escHtml(a.title)}</span>
                 <span class="support-drop-arrow">›</span>
@@ -664,17 +368,6 @@ function hideSearchDropdown() {
     }
 }
 
-// Copyright (C) The Greek Directory, 2025-present. All rights reserved.
-
-function searchArticles(query) {
-    const q = query.toLowerCase();
-    return SUPPORT_ARTICLES.filter(a =>
-        a.title.toLowerCase().includes(q) ||
-        a.excerpt.toLowerCase().includes(q) ||
-        (SUPPORT_CATEGORIES.find(c => c.id === a.category)?.name || '').toLowerCase().includes(q)
-    );
-}
-
 function doSearch(query) {
     if (!query || query.trim().length < 2) return;
     currentSearch = query.trim();
@@ -683,7 +376,6 @@ function doSearch(query) {
     if (input) input.value = currentSearch;
     hideSearchDropdown();
 
-    // Show search results section
     const resultsSection = document.getElementById('searchResultsSection');
     const catSection     = document.getElementById('categoriesSection');
     const artSection     = document.getElementById('articlesSection');
@@ -697,7 +389,6 @@ function doSearch(query) {
 
     const list    = document.getElementById('searchResultsList');
     const results = searchArticles(currentSearch);
-
     if (!list) return;
 
     if (results.length === 0) {
@@ -732,12 +423,12 @@ function showArticlesSection() {
 
 /* ═══════════════════════════════════════
    NAVIGATION
+   Slugs in articles.json are bare slugs like "how-to-search".
+   Article pages live at /article/users/{slug}/
 ═══════════════════════════════════════ */
 
 function openArticle(slug) {
-    // Article pages at /{slug} — for now shows alert since pages don't exist yet
-    // Once article pages are created, change to: window.location.href = `/${slug}`;
-    window.location.href = `/${slug}`;
+    window.location.href = `/article/users/${slug}/`;
 }
 
 /* ═══════════════════════════════════════
@@ -746,7 +437,7 @@ function openArticle(slug) {
 
 function escHtml(str) {
     if (!str) return '';
-    return str
+    return String(str)
         .replace(/&/g, '&amp;')
         .replace(/</g, '&lt;')
         .replace(/>/g, '&gt;')
